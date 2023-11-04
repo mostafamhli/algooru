@@ -1,0 +1,49 @@
+<div
+  class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-16 lg:px-6 lg:py-12"
+>
+  <div class="mx-auto flex flex-col justify-center align-center mb-10 lg:max-w-xl sm:text-center">
+    <p
+      class="inline-block max-w-max mx-auto px-4 py-3 mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-green-400 suggested-paragraph"
+    >
+      Suggested Tutor For You
+    </p>
+    <p class="text-base text-gray-600 md:text-lg text-center">
+      We've matched you with a few tutors who are well-suited to help you
+      achieve your learning goals.
+    </p>
+  </div>
+
+  <div class="slider-effectCoverflow">
+    <swiper
+      [effect]="'coverflow'"
+      [grabCursor]="true"
+      [centeredSlides]="true"
+      [slidesPerView]="'auto'"
+      [coverflowEffect]="{
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true
+      }"
+      [pagination]="true"
+      [navigation]="true"
+      class="my-swiper"
+    >
+      <ng-template
+        class="h-[600px] w-[600px] relative"
+        swiperSlide
+        *ngFor="let tutor of bestTutors"
+      >
+        <img
+          [src]="tutor ? tutor.tutorImg:''"
+          [alt]="tutor?tutor.name:'' + 'image'"
+          (click)="goToTutorDetails(tutor.numOfClass)"
+        />
+        <div class="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">
+          <h1 class="text-white font-semibold text-2xl">{{ tutor?tutor.name:'' }}</h1>
+        </div>
+      </ng-template>
+    </swiper>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div
+  class="transition transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out max-w-full"
+>
+  <div class="rounded-xl shadow-xl">
+    <div class="image-container" (click)="goToTutorDetails(tutor.numOfClass)">
+      <img
+        [src]="tutor.tutorImg"
+        alt=""
+        class="rounded-t-xl w-full h-36 object-cover"
+      />
+      <div class="overlay">
+        <p class="text">View Details</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col p-7">
+      <h2 class="text-xl font-bold truncate mt-1">
+        <button class="min-w-full max-w-full" mat-raised-button>
+          {{ tutor.name }}
+        </button>
+      </h2>
+      <p
+        class="text-base text-gray-600 line-clamp-1 mt-1 min-w-full w-full whitespace-normal"
+      >
+        {{ tutor.description }}
+      </p>
+      <div class="flex flex-row">
+        <div
+          class="text-xs bg-green-100 p-1 px-2 text-green-700 rounded-2xl"
+        >
+          Number of classes offered: {{ tutor.numOfClass }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

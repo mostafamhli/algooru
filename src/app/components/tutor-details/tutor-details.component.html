@@ -1,0 +1,75 @@
+<div
+  class="text-3xl p-2 group w-fit grid"
+  style="clip-path: inset(0 0 0 0)"
+  (click)="goBack()"
+>
+  <div
+    class="[grid-area:1/1] flex items-center justify-center h-10 w-10 transition ease-in-out group-hover:delay-300 translate-x-10 group-hover:translate-x-0"
+  >
+    <i class="bx bx-arrow-back"></i>
+  </div>
+  <div
+    class="[grid-area:1/1] flex items-center justify-center h-10 w-10 transition ease-in-out delay-700 group-hover:delay-[0s] duration-300 group-hover:-translate-x-10"
+  >
+    <i class="bx bx-arrow-back"></i>
+  </div>
+</div>
+
+<div class="px-12 mt-12 mx-auto max-w-7xl">
+  <div class="w-full mx-auto text-left md:w-11/12 xl:w-9/12 md:text-center">
+    <h1
+      class="mb-8 text-center text-xl md:text-4xl font-semibold md:font-extrabold leading-none  text-gray-900 md:tracking-tight"
+    >
+      <span>Meet</span>
+      <span
+        class="py-2 text-transparent bg-clip-text leading-12 bg-gradient-to-r from-green-400 to-green-600 lg:inline"
+        >&ensp;{{ tutor ? tutor.name : "" }}&ensp;</span
+      >
+      <span>one of our greatest tutores</span>
+    </h1>
+  </div>
+</div>
+<div
+  class="bg-white w-[80%] h-auto md:h-60 my-10 mx-auto rounded shadow-md flex flex-col md:flex-row card text-grey-darkest"
+>
+  <img
+    class="w-full md:w-1/2 h-full rounded-l-sm"
+    [src]="tutor ? tutor.tutorImg : ''"
+    [alt]="tutor.name + 'image'"
+  />
+  <div class="w-full flex flex-col">
+    <div class="p-4 pb-0 flex-1">
+      <p class="mb-1 text-gray-700 text-2xl font-bold">
+        {{ tutor ? tutor.name : "" }}
+      </p>
+
+      <div class="flex items-center mt-6">
+        <p class="text-2xl text-gray-600">
+          {{ tutor ? tutor.description : "" }}
+        </p>
+      </div>
+
+      <div class="flex items-center mt-2">
+        <p class="text-xl text-gray-500">
+          He has taught
+          <span class="text-2xl text-green-400">{{
+            tutor ? tutor.numOfClass : ""
+          }}</span>
+          training sessions so far.
+        </p>
+      </div>
+    </div>
+    <div
+      class="bg-gray-100 p-3 flex items-center justify-between transition hover:bg-green-400"
+    >
+      Book with the teacher
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+</div>
+
+<div class="w-[80%] mx-auto mt-6">
+  <hr class="my-6 border-green-200" />
+</div>
+
+<app-suggested-tutor></app-suggested-tutor>

@@ -1,0 +1,30 @@
+.container {
+  width: 88%;
+  margin: 0 auto;
+}
+
+.mat-mdc-paginator {
+  background-color: #eee;
+  color: #222;
+  border-radius: 2rem;
+  width: 50%;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+input:focus {
+  outline: none;
+}
+@media screen and (max-width: 767px) {
+  .mat-mdc-paginator {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  ::ng-deep .mat-mdc-paginator-range-actions,
+  ::ng-deep .mat-mdc-paginator-page-size {
+    margin: auto !important;
+    padding-bottom: 1rem;
+  }
+}

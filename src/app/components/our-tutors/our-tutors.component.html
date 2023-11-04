@@ -1,0 +1,18 @@
+<div class="container">
+  <app-search (searchEvent)="search($event)"></app-search>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-8 gap-8 mt-2 justify-items-center"
+  >
+    <app-tutor *ngFor="let tutor of tutorsList" [tutor]="tutor"></app-tutor>
+  </div>
+</div>
+
+<mat-paginator
+  #paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  (page)="handlePageEvent($event)"
+>
+  <div class="custom-paginator"></div>
+</mat-paginator>
